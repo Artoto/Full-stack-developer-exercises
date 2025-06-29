@@ -1,0 +1,236 @@
+body {
+  padding: 20px 30px;
+  background-color: #dfdfdf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  -root {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+}
+
+.example1 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #696767;
+  box-sizing: border-box;
+}
+
+.example2,
+.example3,
+.example4,
+.example5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #696767;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1280px) {
+  .example1 {
+    max-width: 1280px;
+    width: 100%;
+  }
+  .example2,
+  .example3,
+  .example4,
+  .example5 {
+    max-width: 1280px;
+    width: 100%;
+  }
+}
+@media (min-width: 1020px) {
+  .example1 {
+    max-width: 1020px;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .example2,
+  .example3,
+  .example4,
+  .example5 {
+    max-width: 1020px;
+    width: 100%;
+    height: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .example1 {
+    max-width: 768px;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .example2,
+  .example3,
+  .example4,
+  .example5 {
+    max-width: 768px;
+    width: 100%;
+  }
+}
+@media (max-width: 568px) {
+  .example1 {
+    max-width: 568px;
+    width: 100%;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .example2,
+  .example3,
+  .example4,
+  .example5 {
+    max-width: 568px;
+    width: 100%;
+  }
+}
+/* การ์ดเริ่มต้น */
+.card {
+  width: 250px;
+  height: 300px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* การเคลื่อนไหวเมื่อ hover */
+.card:hover {
+  transform: rotate(180deg) scale(1.2); /* หมุน 180 องศาและขยายขนาด */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+/* เมื่อ hover เปลี่ยนสีของข้อความ */
+.card:hover p,
+.card:hover h1 {
+  color: #f39c12;
+}
+
+/* ข้อความภายในการ์ด */
+.card p {
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.button {
+  text-decoration: none;
+  background-color: #3498db;
+  padding: 10px 14px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  color: #ffff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* เมื่อ hover ที่ปุ่ม */
+.button:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1); /* ขยายขนาด */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ไอคอน */
+.icon {
+  margin-right: 10px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* เมื่อ hover ให้ไอคอนขยับ */
+.button:hover .icon {
+  transform: translateX(10px); /* ขยับไอคอนไปข้างขวา */
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.button {
+  animation: buttonAnimation 1s ease-out infinite;
+}
+
+/* ข้อความวิ่งจากขวาไปซ้าย */
+@keyframes slideText {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+  animation: slideText 5s linear infinite;
+}
+
+/* สไตล์ปุ่ม */
+.button-2 {
+  padding: 15px 30px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* แอนิเมชั่นกระพริบเมื่อ hover */
+@keyframes blink {
+  0%,
+  100% {
+    background-color: #e74c3c;
+  }
+  50% {
+    background-color: #f39c12;
+  }
+}
+
+.button-2 {
+  animation: blink 5s infinite;
+}
+
+/* สไตล์ของภาพ */
+.img-1 {
+  transition: transform 1s ease;
+}
+
+/* เมื่อ hover หมุนและขยาย */
+.img-1:hover {
+  transform: rotate(360deg) scale(1.2); /* หมุน 360 องศาและขยายขนาด */
+}

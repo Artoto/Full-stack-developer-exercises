@@ -1,0 +1,72 @@
+/* กำหนดพื้นฐานของการแสดงผล */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ปุ่ม */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  background-color: #3498db;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* เมื่อ hover ที่ปุ่ม */
+.button:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1); /* ขยายขนาด */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ไอคอน */
+.icon {
+  margin-right: 10px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* เมื่อ hover ให้ไอคอนขยับ */
+.button:hover .icon {
+  transform: translateX(10px); /* ขยับไอคอนไปข้างขวา */
+}
+
+/* ข้อความในปุ่ม */
+.text {
+  font-weight: bold;
+}
+
+/* ใช้ keyframes ในการทำให้ปุ่มขยับ */
+@keyframes buttonAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.button {
+  animation: buttonAnimation 1s ease-out infinite;
+}
