@@ -1,0 +1,215 @@
+* {
+  --orange: #f99944;
+  --white: #ffff;
+  --bg-input: #ff57221a;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://media.istockphoto.com/id/901001432/photo/modern-business-buildings.jpg?s=612x612&w=0&k=20&c=2osA-kZN1U6AJBSrKpltXtAyY21YHTZzFO2luPN3-iI=")
+    no-repeat center;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+
+.p-1 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  max-width: 500px;
+  min-height: 400px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  padding: 20px 30px;
+  color: var(--orange);
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.form-group:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 15px var(--white);
+}
+
+.form-group-email,
+.form-group-password {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-group-input {
+  color: var(--orange);
+  background-color: var(--bg-input);
+  font-size: 20px;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  border: none;
+  padding: 0 50px;
+  border-bottom: 2px solid var(--orange);
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.form-group-input:focus {
+  outline: none; /* เอาเส้นกรอบออก */
+  border-radius: 8px;
+  border: 2px solid var(--orange); /* เปลี่ยนสีขอบเมื่อ input อยู่ในสถานะ focus */
+  padding: 8px 50px;
+  z-index: 0;
+}
+
+.form-group-input:focus .icon-email {
+  transform: translateY(-5px);
+}
+
+.icon-email {
+  font-size: 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 60%);
+  transition: transform 0.3s ease;
+}
+
+.icon-password {
+  font-size: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 60%);
+}
+
+.icon-lock {
+  font-size: 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 60%);
+}
+
+.form-group-email .form-group-title {
+  position: absolute; /* ทำให้สามารถเลื่อนตำแหน่งได้ */
+  top: 0;
+  left: 0;
+  transform: translate(120%, 110%); /* เริ่มต้นที่ตำแหน่งเดิม */
+  transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+  z-index: 1;
+}
+
+.form-group-password .form-group-title {
+  position: absolute; /* ทำให้สามารถเลื่อนตำแหน่งได้ */
+  top: 0;
+  left: 0;
+  transform: translate(70%, 110%); /* เริ่มต้นที่ตำแหน่งเดิม */
+  transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+  z-index: 1;
+}
+
+.a-1 {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: end;
+  max-width: 400px;
+  width: 100%;
+  color: var(--orange);
+}
+
+.a-1:hover {
+  text-decoration: underline;
+}
+
+.p-2 {
+  text-align: center;
+  cursor: pointer;
+  max-width: 400px;
+  width: 100%;
+  color: var(--orange);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button-submit {
+  padding: 0px 16px;
+  background-color: var(--white);
+  border-radius: 20px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  max-width: 400px;
+  width: 40%;
+}
+
+.button-submit:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+footer {
+  position: fixed;
+  top: 95%;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  color: var(--white);
+  font-size: 18px;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 16px 18px;
+  }
+  .form-group {
+    padding: 20px 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 12px 10px;
+  }
+  .form-group {
+    padding: 16px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 6px 2px;
+  }
+  .form-group {
+    padding: 10px 14px;
+  }
+
+  .form-group {
+    max-width: 350px;
+    min-height: 300px;
+  }
+}
